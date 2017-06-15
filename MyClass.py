@@ -7,67 +7,67 @@ from pytz import timezone
 import time
 
 # You can leave this bit out if you're using a paid PythonAnywhere account
-proxy_url = "http://proxy.server:3128"
-telepot.api._pools = {
-    'default': urllib3.ProxyManager(proxy_url=proxy_url, num_pools=3, maxsize=10, retries=False, timeout=30),
-}
-telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
+#proxy_url = "http://proxy.server:3128"
+#telepot.api._pools = {
+#    'default': urllib3.ProxyManager(proxy_url=proxy_url, num_pools=3, maxsize=10, retries=False, timeout=30),
+#}
+#telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
 # end of the stuff that's only needed for free accounts
 
-bot = telepot.Bot('B')
+bot = telepot.Bot('308765002:AAHM4xMTFoeoaNWOtE4LCAWPg1qbcu7EsXs')
 
-def subject():
+def details():
   import datetime
   day = datetime.date.today().strftime("%A")
   MondayS = {
-      1:"Cryptography & Network Security",
-      2:"Mobile Application Development Lab/Internet Programming Lab",
-      3:"Mobile Application Development Lab/Internet Programming Lab",
-      4:"Mobile Application Development Lab/Internet Programming Lab",
-      5:"Comprehension",
-      6:"Comprehension",
-      7:"CDPD",
-      8:"Mobile Application Development"
+      1:["Cryptography & Network Security","Sruthi"],
+      2:["Mobile Application Development Lab/Internet Programming Lab","HariHaraGopal/ Kanagaraj"],
+      3:["Mobile Application Development Lab/Internet Programming Lab","HariHaraGopal/ Kanagaraj"],
+      4:["Mobile Application Development Lab/Internet Programming Lab","HariHaraGopal/ Kanagaraj"],
+      5:["Comprehension","Kanagaraj"],
+      6:["Comprehension","Kanagaraj"],
+      7:["CDPD","HariHaraGopal"],
+      8:["CDPD","HariHaraGopal"]
       }
   TuesdayS = {
-      1:"Internet Programming",
-      2:"Project Phase 1",
-      3:"Project Phase 1",
-      4:"Project Phase 1",
-      5:"Mobile Application Development",
-      6:"Cyber Forensics or XML and Web Services",
-      7:"Mobile Computing",
-      8:"TWM"
+      1:["Internet Programming","Kanagaraj"],
+      2:["Project Phase 1","Padmavathy"],
+      3:["Project Phase 1","Padmavathy"],
+      4:["Project Phase 1","Padmavathy"],
+      5:["Mobile Application Development","Vinotha"],
+      6:["Cyber Forensics or XML and Web Services","Mathivanan/Padmavathy"],
+      7:["Mobile Computing","HariHaraGopal"],
+      8:["TWM","Hari/Kanagaraj/Aruna"]
       }
   WednesdayS = {
-      1:"Mobile Computing",
-      2:"Cryptography & Network Security",
-      3:"Software Testing",
-      4:"Mobile Application Development",
-      5:"Cryptography & Network Security",
-      6:"Mobile Computing",
-      7:"Software Testing",
-      8:"Internet Programming"
+      1:["Mobile Computing","HariHaraGopal"],
+      2:["Cryptography & Network Security","Sruthi"],
+      3:["Software Testing","Mathivanan"],
+      4:["Cryptography & Network Security","Sruthi"],
+      5:["Mobile Application Development","Vinotha"],
+      6:["Mobile Computing","HariHaraGopal"],
+      7:["Software Testing","Mathivanan"],
+      8:["Internet Programming","Kanagaraj"]
       }
   ThursdayS = {
-      1:"Software Testing",
-      2:"Internet Programming",
-      3:"Cyber Forensics or XML and Web Services",
-      4:"Mobile Application Development",
-      5:"Mobile Application Development Lab/Internet Programming Lab",
-      6:"Mobile Application Development Lab/Internet Programming Lab",
-      7:"Mobile Application Development Lab/Internet Programming Lab",
-      8:"Seminar"
+      1:["Software Testing","Mathivanan"],
+      2:["Internet Programming","Kanagaraj"],
+      3:["Cyber Forensics or XML and Web Services","Mathivanan/Padmavathy"],
+      4:["Mobile Application Development","Vinotha"],
+      5:["Mobile Application Development Lab/Internet Programming Lab","HariHaraGopal/ Kanagaraj"],
+      6:["Mobile Application Development Lab/Internet Programming Lab","HariHaraGopal/ Kanagaraj"],
+      7:["Mobile Application Development Lab/Internet Programming Lab","HariHaraGopal/ Kanagaraj"],
+      8:["Mobile Application Development","Vinotha"]
       }
   FridayS = {
-      1:"Cyber Forensics or XML and Web Services",
-      2:"Cryptography & Network Security",
-      3:"Mobile Computing",
-      4:"Seminar",
-      5:"Internet Programming",
-      6:"Software Testing",
-      7:"Association",
-      8:"Association"
+      1:["Cyber Forensics or XML and Web Services","Mathivanan/Padmavathy"],
+      2:["Cryptography & Network Security","Sruthi"],
+      3:["Mobile Computing","HariHaraGopal"],
+      4:["Seminar","Kanagaraj"],
+      5:["Internet Programming","Kanagaraj"],
+      6:["Software Testing","Mathivan"],
+      7:["Association","HariHaraGopal"],
+      8:["Association","HariHaraGopal"]
       }
   if day == 'Monday':
       daysub = MondayS.copy()
@@ -91,29 +91,29 @@ def wclass():
     in_time = datetime.now(india)
     from datetime import time
     if (day != 'Saturday' or day != 'Sunday'):
-        dayclas = subject()
+        dayclas = details()
         if time(8,45) <= in_time.time() <= time(9,34):
-            rpy = dayclas[1]
+            rpy = dayclas[1][0]
         elif time(9,35) <= in_time.time() <= time(10,24):
-            rpy = dayclas[2]
+            rpy = dayclas[2][0]
         elif time(10,25) <= in_time.time() <= time(10,44):
             rpy = "Break"
         elif time(10,45) <= in_time.time() <= time(11,34):
-            rpy = dayclas[3]
+            rpy = dayclas[3][0]
         elif time(11,35) <= in_time.time() <= time(12,24):
-            rpy = dayclas[4]
+            rpy = dayclas[4][0]
         elif time(12,25) <= in_time.time() <= time(13,24):
             rpy = "Lunch"
         elif time(13,25) <= in_time.time() <= time(14,14):
-            rpy = dayclas[5]
+            rpy = dayclas[5][0]
         elif time(14,15) <= in_time.time() <= time(15,4):
-            rpy = dayclas[6]
+            rpy = dayclas[6][0]
         elif time(15,5) <= in_time.time() <= time(15,14):
             rpy = "Break"
         elif time(15,15) <= in_time.time() <= time(16,4):
-            rpy = dayclas[7]
+            rpy = dayclas[7][0]
         elif time(16,5) <= in_time.time() <= time(16,55):
-            rpy = dayclas[8]
+            rpy = dayclas[8][0]
         else:
             rpy = "Coll mudinjuthu pa ... V2ku Poo!!!"
     else:
@@ -122,7 +122,43 @@ def wclass():
 
 
 def staff():
-    return "Yet To Add This Content :-) ..."
+    import datetime
+    day = datetime.date.today()
+    day = day.strftime("%A")
+    from datetime import datetime
+    from pytz import timezone
+    india = timezone('Asia/Calcutta')
+    in_time = datetime.now(india)
+    from datetime import time
+    if (day != 'Saturday' or day != 'Sunday'):
+        dayclas = details()
+        if time(8,45) <= in_time.time() <= time(9,34):
+            rpy = dayclas[1][1]
+        elif time(9,35) <= in_time.time() <= time(10,24):
+            rpy = dayclas[2][1]
+        elif time(10,25) <= in_time.time() <= time(10,44):
+            rpy = "Break"
+        elif time(10,45) <= in_time.time() <= time(11,34):
+            rpy = dayclas[3][1]
+        elif time(11,35) <= in_time.time() <= time(12,24):
+            rpy = dayclas[4][1]
+        elif time(12,25) <= in_time.time() <= time(13,24):
+            rpy = "Lunch"
+        elif time(13,25) <= in_time.time() <= time(14,14):
+            rpy = dayclas[5][1]
+        elif time(14,15) <= in_time.time() <= time(15,4):
+            rpy = dayclas[6][1]
+        elif time(15,5) <= in_time.time() <= time(15,14):
+            rpy = "Break"
+        elif time(15,15) <= in_time.time() <= time(16,4):
+            rpy = dayclas[7][1]
+        elif time(16,5) <= in_time.time() <= time(16,55):
+            rpy = dayclas[8][1]
+        else:
+            rpy = "Coll mudinjuthu pa ... V2ku Poo!!!"
+    else:
+        rpy = "Coll illa pa, inaiku leave ... Poo!!!"
+    return rpy
 
 def handle(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
@@ -138,6 +174,7 @@ def handle(msg):
             bot.sendMessage(chat_id, "Hi, Hope Day is going Great !!!... Send /subject or /staff to get the current period")
         else:
             bot.sendMessage(chat_id, "Ohh Hoooo ... Invalid Option")
+
 bot.message_loop(handle)
 
 print ('Listening ...')
